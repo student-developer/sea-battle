@@ -5,7 +5,9 @@ import grails.plugins.springsecurity.Secured
 
 class SecureController {
 
-    def index() { }
+    def index() {
+        redirect(controller: "secure", action: "seabattleGame")
+    }
 
     def isUsableScreenName(){
         render true;
@@ -14,7 +16,7 @@ class SecureController {
     def isCorrectPassword(){
         render true;
     }
-
+   @Secured(['ROLE_Authorized'])
     def seabattleGame(){
 
     }

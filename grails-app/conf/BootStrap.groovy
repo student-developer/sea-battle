@@ -8,7 +8,7 @@ class BootStrap {
 
 
         if (!Person.count()) {
-            def userRole = new Role(authority: 'ROLE_User').save(flush: true)
+            def userRole = new Role(authority: 'ROLE_Authorized').save(flush: true)
             def users = []
             users << new Person(username: "peter", enabled: true, password: 'test', name: "Petr Stepanovich Flomenkov", email: "petr@gmail.com", phone: "2345678").save(failOnError: true, flush: true)
             users << new Person(username: "mihail", enabled: true, password: 'test', name: "Mihail", email: "mihail@gmail.com", phone: "152637").save(failOnError: true, flush: true)
