@@ -1,5 +1,8 @@
 package seabuttle
 
+import grails.plugins.springsecurity.Secured
+
+
 class SecureController {
 
     def index() { }
@@ -10,5 +13,9 @@ class SecureController {
 
     def isCorrectPassword(){
         render true;
+    }
+
+    def seabattleGame(){
+
     }
 }

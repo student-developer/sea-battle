@@ -10,7 +10,7 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
-
+grails.plugins.springsecurity.password.algorithm='SHA-512' // secure plugin
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
@@ -91,3 +91,8 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'seabuttle.Person'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'seabuttle.PersonRole'
+grails.plugins.springsecurity.authority.className = 'seabuttle.Role'
